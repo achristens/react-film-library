@@ -10,11 +10,14 @@ class FilmListing extends Component{
         <h1 className="section-title">FILMS</h1>
         <h1>{films[0].title}</h1>
         {films.map((film) =>
-          <article key={film.id}>
-            {/* <img src="../src/tmdb.js/" + {film.poster_path}></img> */}
+          <div className="film-row" key={film.id}>
+              <figure className="film-poster">
+                <img src={`https://image.tmdb.org/t/p/w780/${film.poster_path}`} alt={film.title}/>
+              </figure>
+
             <p>{ film.title }</p>
             <p>{ film.release_date }</p>
-          </article>)
+          </div>)
         }
       </div>
     )
