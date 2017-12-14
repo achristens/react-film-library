@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import FilmRow from './FilmRow';
-import Fave from './Fave.js'
 
 class FilmListing extends Component{
 
   handleFaveClick(filter){
-    console.log("Setting filter to ${filter}")
+    console.log(`Setting filter to ${filter}`)
   }
 
   render(){
@@ -21,11 +20,11 @@ class FilmListing extends Component{
         </h1>
 
         <div className="film-list-filters">
-          <div className="film-list-filter">
+          <div className="film-list-filter" onClick={(e) => this.handleFaveClick('all')}>
             ALL
             <span className="section-count">{films.length}</span>
           </div>
-          <div className="film-list-filter">
+          <div className="film-list-filter" onClick={(e) => this.handleFaveClick('faves')}>
             FAVES
             <span className="section-count">0</span>
           </div>
