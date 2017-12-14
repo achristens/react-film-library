@@ -4,11 +4,14 @@ import Fave from './Fave.js'
 
 class FilmRow extends Component{
 
+  handleDetailsClick(film){
+    console.log(`Fetching details for ${film.title}!`)
+  }
   render(){
     const film = this.props.film
 
     return(
-      <div className="film-row" >
+      <div className="film-row" onClick={(e) => this.handleDetailsClick(film)}>
         <FilmPoster film={film}/>
 
         <div className="film-summary">
