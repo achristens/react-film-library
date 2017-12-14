@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FilmPoster from './FilmPoster';
+import Fave from './Fave.js'
 
 class FilmRow extends Component{
 
@@ -14,6 +15,7 @@ class FilmRow extends Component{
           <h1>{ film.title }</h1>
           <p>{ new Date(film.release_date).getFullYear() }</p>
         </div>
+        <Fave />
       </div>
     )
   }
