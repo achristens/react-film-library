@@ -12,8 +12,8 @@ class FilmListing extends Component{
   }
 
   handleFilterClick(e, filter){
-    var faves = document.getElementById('faves-div')
-    var all   = document.getElementById('all-div')
+    let faves = document.getElementById('faves-div')
+    let all   = document.getElementById('all-div')
 
     if (e.target.innerText.startsWith('ALL') === true){
       e.target.className = "film-list-filter is-active";
@@ -40,7 +40,7 @@ class FilmListing extends Component{
         </h1>
 
         <div className="film-list-filters">
-          <div id="all-div" className="film-list-filter" onClick={(e) => this.handleFilterClick(e, 'all')}>
+          <div id="all-div" className="film-list-filter is-active" onClick={(e) => this.handleFilterClick(e, 'all')}>
             ALL
             <span className="section-count">{films.length}</span>
           </div>

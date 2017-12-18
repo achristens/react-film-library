@@ -10,15 +10,17 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      films: TMDB.films
+      films: TMDB.films,
+      faves: [],
+      current: ''
     }
   }
 
   render() {
     return (
       <div className="film-library">
-        <FilmListing filmList={this.state.films}/>
-        <FilmDetails filmList={this.state.films}/>
+        <FilmListing filmList={this.state.films} faves={this.state.faves}/>
+        <FilmDetails filmList={this.state.films} current={this.state.current}/>
       </div>
     );
   }
