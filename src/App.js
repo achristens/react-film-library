@@ -35,6 +35,9 @@ class App extends Component {
 
   handleDetailsClick(film){
     console.log(`Fetching details for ${film.title}!`)
+    this.setState({
+      current: film
+    })
   }
 
   render() {
