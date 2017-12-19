@@ -25,13 +25,12 @@ class FilmListing extends Component{
     this.setState({
       filter: filter
     })
-
   }
 
   render(){
     const films = this.props.filmList
-    let filmRows = films.map((film, key)=> (
-      <FilmRow key={film.id} film={film}/>
+    const filmRows = films.map((film) => (
+      <FilmRow key={film.id} film={film} onFaveToggle={() => this.props.onFaveToggle(film)} />
     ))
     return(
       <div className="film-list">
