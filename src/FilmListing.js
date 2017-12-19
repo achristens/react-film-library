@@ -30,7 +30,7 @@ class FilmListing extends Component{
   render(){
     const films = this.props.filmList
     const filmRows = films.map((film) => (
-      <FilmRow key={film.id} film={film} onFaveToggle={() => this.props.onFaveToggle(film)} isFave={ this.props.faves.includes(film) }/>
+      <FilmRow key={film.id} film={film} onFaveToggle={() => this.props.onFaveToggle(film)} handleDetailsClick={() => this.props.handleDetailsClick(film)} isFave={ this.props.faves.includes(film) }/>
     ))
     return(
       <div className="film-list">

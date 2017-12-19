@@ -4,19 +4,12 @@ class Fave extends Component{
 
   constructor(props){
     super()
-    // this.state = {
-    //   isFave: false,
-    // }
     this.handleClick = this.handleClick.bind(this);
   }
+
   handleClick(e) {
     e.stopPropagation()
-    console.log("handling Fave click!")
     this.props.onFaveToggle()
-    // this.setState({
-    //   isFave: !this.state.isFave
-    // })
-
   }
 
   render(){

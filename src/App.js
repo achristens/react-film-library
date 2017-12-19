@@ -15,6 +15,7 @@ class App extends Component {
       current: ''
     }
     this.onFaveToggle = this.onFaveToggle.bind(this);
+    this.handleDetailsClick = this.handleDetailsClick.bind(this);
   }
 
   onFaveToggle(film) {
@@ -22,21 +23,25 @@ class App extends Component {
     const filmIndex = faves.indexOf(film)
 
     if (filmIndex === -1){
-      console.log(`Adding ${film} to faves...`)
+      console.log(`Adding ${film.title} to faves...`)
       faves.push(film)
     } else if (filmIndex > -1){
-      console.log(`Removing ${film} from faves.`)
+      console.log(`Removing ${film.title} from faves.`)
       faves.splice(filmIndex, 1)
     }
 
     this.setState({faves});
   }
 
+  handleDetailsClick(film){
+    console.log(`Fetching details for ${film.title}!`)
+  }
+
   render() {
     return (
       <div className="film-library">
-        <FilmListing filmList={this.state.films} faves={this.state.faves} onFaveToggle={this.onFaveToggle}/>
-        <FilmDetails filmList={this.state.films} current={this.state.current}/>
+        <FilmListing filmList={this.state.films} faves={this.state.faves} onFaveToggle={this.onFaveToggle} handleDetailsClick={this.handleDetailsClick}/>
+        <FilmDetails filmList={this.state.films} current={this.state.current} />
       </div>
     );
   }
