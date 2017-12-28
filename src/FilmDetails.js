@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+// const backdropUrl = `https://image.tmdb.org/t/p/w1280/${props.current.backdrop_path}`
+// const posterUrl = `https://image.tmdb.org/t/p/w780/${props.current.poster_path}`
 
-class FilmDetails extends Component{
-  render(){
-    const films = this.props.filmList
-
+function FilmDetails(props) {
     return(
+
       <div className="film-details">
         <h1 className="section-title">DETAILS</h1>
-        {/* {films.map((film, index) =>
-          <li key={index}>{film.title}</li>)
-        } */}
-
+        <div className="film-detail">
+        <p>
+          <i className="material-icons">subscriptions</i>
+          <span>No film selected</span>
+        </p>
+        </div>
       </div>
     )
-  }
 }
 
 export default FilmDetails
