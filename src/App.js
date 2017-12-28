@@ -4,7 +4,6 @@ import './App.css';
 import FilmDetails from './FilmDetails';
 import FilmListing from './FilmListing';
 import TMDB from './TMDB.js'
-
 class App extends Component {
 
   constructor(props){
